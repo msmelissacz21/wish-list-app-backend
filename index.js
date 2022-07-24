@@ -1,10 +1,12 @@
 // Require needed modules
 let express = require('express')
+const dotenv = require('dotenv')
+dotenv.config({ path:'./.env'})
 
 // Initialize the app object
-let app = express()
+const app = express()
+app.use('/favorites', require('./controller/favorites'))
 
-app.use('/places', require('./controllers/favorites'))
 
 // Home page route
 app.get('/', (req,res) => {
@@ -18,5 +20,5 @@ app.get('*', (req,res) => {
 
 // Listen for connections
 app.listen(process.env.PORT, function () {
-    console.log('Listening on port 4050!')
+    console.log('Listening on port ' + process.env.PORT)
 })
