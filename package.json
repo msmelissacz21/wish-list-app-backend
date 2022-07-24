@@ -1,0 +1,23 @@
+{
+  "name": "wish-list-app-backend",
+  "version": "1.0.0",
+  "description": "The purpose of this application is to add, delete, and prioitize items on wish.  This is the back end code of the application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msmelissacz21/wish-list-app-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msmelissacz21/wish-list-app-backend/issues"
+  },
+  "homepage": "https://github.com/msmelissacz21/wish-list-app-backend#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
