@@ -22,3 +22,11 @@ app.get('*', (req,res) => {
 app.listen(process.env.PORT, function () {
     console.log('Listening on port ' + process.env.PORT)
 })
+
+
+//step for connecting went over 7/26/22 class
+// const url = `${process.env.BACKEND_URL}/users`
+
+// fetch(url, {
+//     method: 'POST'
+// })
