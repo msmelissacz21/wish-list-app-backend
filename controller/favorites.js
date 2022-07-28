@@ -31,7 +31,7 @@ router.post('/save', async (req, res) => {
 // GET is used to retrieve data
 router.get('/user-favorites/name/:name', async (req, res) => {
     try {
-        f = await db.UserFavorites.find({name: req.params.name}).then()
+        f = await db.UserFavorites.findOne({name: req.params.name}).then()
         res.send(f)
     } catch (err) {
         if (`{:name}` === undefined ) {
