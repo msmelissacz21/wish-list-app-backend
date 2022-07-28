@@ -15,21 +15,35 @@ router.get('/', async (req,res) => {
 })
 
 // POST is used to create a new entity
-router.post('/save', (req, res) => {
-    db.Favorites.create(req.body).then(
-        console.log('saved')
-    )
+router.post('/save', async (req, res) => {
+    try {
+        await db.Favorites.create(req.body).then(
+        console.log('Saved to wishlist'))
+        res.send()
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ 'message': ''})
+    }
+})
 
-    res.send('Favorite saved to wishlist database')
+router.post('/user-favorites/user-id/:userId', async (req, res) => {
+    db.UserFavorites.create({userId: req.params.userId, favorites: []}).then()
+    res.send()
 })
 
 // PUT method is used to update an existing entity
-router.put('/update', (req,res) => {
+router.put('/user-favorites/user-id/:userId', async (req, res) => {
+    db.UserFavorites.findOneAndUpdate({userId: req.params.userId, favorites: req.body}).then()
+    res.send()
+})
 
+router.get('/user-favorites/user-id/:userId', async (req, res) => {
+    f = await db.UserFavorites.find({userId: req.params.userId}).then()
+    res.send(f)
 })
 
 //  DELETE method 
-router.delete('/', (req,res) => {
+router.delete('/:id', (req,res) => {
 
 })
 
