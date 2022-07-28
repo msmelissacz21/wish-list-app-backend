@@ -1,30 +1,36 @@
 const router = require('express').Router()
+const db = require('../model')
 
-router.get('/save', (req,res) => {
-    res.send('GET /favorites')
+
+// GET is used to retrieve data
+router.get('/', async (req,res) => {
+    try {
+        let favorites = await db.Favorites.find()
+        res.send(favorites)
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ 'message': 'unable to retrieve favorites'})
+    }
 })
 
-// post localhost:3000/favorites
-router.post('/', (req, res) => {
-    db.Place.create(req.body)
-    .then(() => {
-        res.redirect('/favorites')
-    })
-    .catch(err => {
-        if (err && err.name == 'ValidationError') {
-            let message = 'Validation Error: '
-  
-            for (var field in err.errors) {
-              message += `${field} was ${err.errors[field].value}. `
-              message += `${err.errors[field].message}`
-            }
-            console.log('Validation error message', message)
-            res.render('favorites/new', { message })
-        }
-        else {
-            res.render('error404/error404')
-        }
-    })
-  })
+// POST is used to create a new entity
+router.post('/save', (req, res) => {
+    db.Favorites.create(req.body).then(
+        console.log('saved')
+    )
+
+    res.send('Favorite saved to wishlist database')
+})
+
+// PUT method is used to update an existing entity
+router.put('/update', (req,res) => {
+
+})
+
+//  DELETE method 
+router.delete('/', (req,res) => {
+
+})
 
 module.exports = router
