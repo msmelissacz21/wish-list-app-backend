@@ -6,25 +6,16 @@ const mongoose = require('mongoose')
 
 // Initialize the app object
 const app = express()
+
+app.use(express.json())
+
 app.use('/favorites', require('./controller/favorites'))
 
 
 
-// LISTEN
-// app.listen(PORT, () => {
-//   console.log('listening at port', PORT);
-// })
-
-
-// Home page route
-app.get('/', (req,res) => {
-    res.send('Hello Home Page')
-})
-
-app.get('*', (req,res) => {
-    res.status(404).send('<h1>404 Page</h1>')
-})
-
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => console.log('DB connected'))
+.catch(err => console.error(err));
 
 // Listen for connections
 app.listen(process.env.PORT, function () {
@@ -32,9 +23,6 @@ app.listen(process.env.PORT, function () {
 })
 
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => console.log('DB connected'))
-.catch(err => console.error(err));
 
 
 //step for connecting went over 7/26/22 class
