@@ -1,6 +1,6 @@
 # Group Project Wish-List App
 
-The purpose of this application is to add, delete, and prioitize items on a wish list.  This is the back end code of the application.
+The purpose of this application is to add, delete, and prioitize items on a wish list.  This app has users that can add, update and delete items from their respective wishlists.  This is the back end code of the application.
 
 
 ## Routes
@@ -8,24 +8,37 @@ The purpose of this application is to add, delete, and prioitize items on a wish
 | Method   | Path                              | Purpose                                                    |
 | -------- |:---------------------------------:| ----------------------------------------------------------:|
 | GET      |                   /               |   Home page                                                |
-| GET      |                /favorites         |   Favorites index page                                     |
-| POST     |                /favorites         |   Create new favorite                                      |
-| GET      |              /favorites/new       |   Form page for creating a new favorite                    |
-| GET      |              /favorites/:id       |   Details about a particular favorited item                |
-| GET      |           /favorites/:id/edit     |   Form page for editing an existing item's favorite order  |
-| DELETE   |              /favorites/:id       |   Delete a particular favorited item                       | 
-| POST     |       /favorites/:id/comment      |   Create a comment about a particular item                 |
-| DELETE   | /favorites/:id/comment:commentID  |   Delete a comment about a particular item                 |
+| GET      |                TBD       |   TBD                                     |
+| GET      |              TBD       |   TBD               |
+| GET      |           /user-favorites/name/:name     |   Gets a user and their favorites  |
+| DELETE   |              /user-favorites/name/:name       |   Delete a user and all of their favorited items    | 
+| POST     |       /user-favorites/name/:name      |   Updates a specific user's favorites                |
+| DELETE   | TBD  |   Delete a specific favorite                 |
 | GET      |                   *               |   404 page (matches any route not defined above)           |
 
 
 ## Database Item Field and Type
 
-| Field       | Type                  | 
-| ----------- |-----------------------| 
-| _id         |        Object ID      |   
-| name        |         String        |  
-| price       |         Number        | 
-| sale price  |         Number        | 
-| date added  |         String        |   
-| pic         |         String        | 
+Wish-list-app-database.favorites
+
+| Field            | Type                  | 
+| ---------------- |-----------------------| 
+| _id              |        Object ID      |   
+| name             |         String        |  
+| price            |         String        | 
+| sale price       |         String        | 
+| date added       |         String        |   
+| image            |         String        | 
+| manufacturer     |         String        | 
+| shortDescription |         String        | 
+| sku              |         String        | 
+| url              |         String        | 
+
+
+
+Wish-list-app-database.userfavorites
+
+| Field            | Type                  | 
+| ---------------- |-----------------------| 
+| _id              |        Object ID      |   
+| name             |         String        | 
