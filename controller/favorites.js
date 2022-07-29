@@ -1,5 +1,7 @@
 const router = require('express').Router()
+const { route } = require('express/lib/application')
 const db = require('../model')
+
 
 // GET is used to retrieve data
 router.get('/user-favorites/name/:name', async (req, res) => {
@@ -37,6 +39,7 @@ router.put('/user-favorites/name/:name', async (req, res) => {
     } catch (err) {
         if (`{:name}` === undefined ) {
             console.log('Name does not exist')
+            res.status(500).json({ 'message': 'Name does not exist'})
         } else {
             console.log(err)
             res.status(500).json({ 'message': 'Something went wrong'})
@@ -48,9 +51,16 @@ router.put('/user-favorites/name/:name', async (req, res) => {
 //  DELETE method 
 router.delete('/user-favorites/name/:name', (req,res) => {
     try {
-        db.UserFavorites.findOneAndDelete( {name: req.params.name}, {fav} )
+        db.UserFavorites.findOneAndDelete({name: req.params.name}).then()
+        res.send()
     } catch (err) {
-
+        if (`{:name}` === undefined ) {
+            console.log('Name does not exist')
+            res.status(500).json({ 'message': 'Name does not exist'})
+        } else {
+            console.log(err)
+            res.status(500).json({ 'message': 'Something went wrong'})
+        }
     }
 })
 
