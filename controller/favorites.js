@@ -8,6 +8,8 @@ const db = require('../model')
 router.get('/user-favorites/name/:name', async (req, res) => {
     try {
         f = await db.UserFavorites.findOne({name: req.params.name}).then()
+        console.log('test')
+        console.log(f)
         res.set('Access-Control-Allow-Origin', '*')
         res.send(f)
     } catch (err) {
