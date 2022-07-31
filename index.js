@@ -3,12 +3,14 @@ let express = require('express')
 const dotenv = require('dotenv')
 dotenv.config({ path:'./.env'})
 const mongoose = require('mongoose')
+const cors = require('cors')
+
 
 // Initialize the app object
 const app = express()
 
 app.use(express.json())
-
+app.use(cors())
 app.use('/favorites', require('./controller/favorites'))
 
 
