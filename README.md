@@ -38,3 +38,4 @@ Wish-list-app-database.userfavorites
 | ---------------- |-----------------------| 
 | _id              |        Object ID      |   
 | name             |         String        | 
+| favorites        |         Array         | 
