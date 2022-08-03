@@ -7,13 +7,9 @@ The purpose of this application is to add, delete, and prioitize items on a wish
 
 | Method   | Path                              | Purpose                                                    |
 | -------- |:---------------------------------:| ----------------------------------------------------------:|
-| GET      |                   /               |   Home page                                                |
-| GET      |                TBD       |   TBD                                     |
-| GET      |              TBD       |   TBD               |
 | GET      |           /user-favorites/name/:name     |   Gets a user and their favorites  |
 | DELETE   |              /user-favorites/name/:name       |   Delete a user and all of their favorited items    | 
-| POST     |       /user-favorites/name/:name      |   Updates a specific user's favorites                |
-| DELETE   | TBD  |   Delete a specific favorite                 |
+| POST     |       /user-favorites/name/:name      |   Updates a specific user's favorites                |          
 | GET      |                   *               |   404 page (matches any route not defined above)           |
 
 

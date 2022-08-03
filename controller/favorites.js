@@ -4,7 +4,7 @@ const db = require('../model')
 
 
 
-// GET is used to retrieve data
+// GET is used to retrieve the wishlist data
 router.get('/user-favorites/name/:name', async (req, res) => {
     try {
         f = await db.UserFavorites.findOne({name: req.params.name}).then()
@@ -25,6 +25,7 @@ router.get('/user-favorites/name/:name', async (req, res) => {
 
 
 // POST is used to create a new entity
+// This creates a new wishlist
 router.post('/user-favorites/name/:name', async (req, res) => {
     try {
         db.UserFavorites.create({name: req.params.name, favorites: []}).then()
@@ -38,7 +39,7 @@ router.post('/user-favorites/name/:name', async (req, res) => {
 })
 
 
-// PUT method is used to update an existing entity
+// PUT method is used to update an existing wishlist
 router.put('/user-favorites/name/:name', async (req, res) => {
     try {
         db.UserFavorites.findOneAndUpdate({name: req.params.name}, {favorites: req.body}).then()
@@ -58,7 +59,7 @@ router.put('/user-favorites/name/:name', async (req, res) => {
 })
 
 
-//  DELETE method 
+//  DELETE method to delete a wishlist item
 router.delete('/user-favorites/name/:name', (req,res) => {
     try {
         db.UserFavorites.findOneAndDelete({name: req.params.name}).then()
