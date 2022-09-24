@@ -1,13 +1,14 @@
+import { UserFavorites } from "../model/user-favorites"
+
 const router = require('express').Router()
 const { route } = require('express/lib/application')
-const db = require('../model')
 
 
 
 // GET is used to retrieve the wishlist data
 router.get('/user-favorites/name/:name', async (req, res) => {
     try {
-        f = await db.UserFavorites.findOne({name: req.params.name}).then()
+        let f = await UserFavorites.findOne({name: req.params.name}).then()
         console.log('test')
         console.log(f)
         res.set('Access-Control-Allow-Origin', '*')
@@ -28,7 +29,7 @@ router.get('/user-favorites/name/:name', async (req, res) => {
 // This creates a new wishlist
 router.post('/user-favorites/name/:name', async (req, res) => {
     try {
-        db.UserFavorites.create({name: req.params.name, favorites: []}).then()
+        UserFavorites.create({name: req.params.name, favorites: []}).then()
         res.set('Access-Control-Allow-Origin', '*')
         res.send()
     } catch (err) {
@@ -42,7 +43,7 @@ router.post('/user-favorites/name/:name', async (req, res) => {
 // PUT method is used to update an existing wishlist
 router.put('/user-favorites/name/:name', async (req, res) => {
     try {
-        db.UserFavorites.findOneAndUpdate({name: req.params.name}, {favorites: req.body}).then()
+        UserFavorites.findOneAndUpdate({name: req.params.name}, {favorites: req.body}).then()
         res.set('Access-Control-Allow-Origin', '*')
         res.send()
     } catch (err) {
@@ -62,7 +63,7 @@ router.put('/user-favorites/name/:name', async (req, res) => {
 //  DELETE method to delete a wishlist item
 router.delete('/user-favorites/name/:name', (req,res) => {
     try {
-        db.UserFavorites.findOneAndDelete({name: req.params.name}).then()
+        UserFavorites.findOneAndDelete({name: req.params.name}).then()
         res.set('Access-Control-Allow-Origin', '*')
         res.send()
     } catch (err) {

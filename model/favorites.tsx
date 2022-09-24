@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+import { Schema, model } from "mongoose"
 
-const favoritesSchema = new mongoose.Schema({
+const favoritesSchema = new Schema<IFavorite>({
   image: { type: String, required: true },
   manufacturer: { type: String },
   name: { type: String, required: true },
@@ -17,4 +17,4 @@ favoritesSchema.methods.showFavorites = function() {
   return `${this.name} ${this.image}, ${this.regularPrice} ${this.salePrice}.`
 }
 
-module.exports = mongoose.model('Favorites', favoritesSchema)
+module.exports = model('Favorites', favoritesSchema)

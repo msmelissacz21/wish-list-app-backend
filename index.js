@@ -11,7 +11,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
-app.use('/favorites', require('./controller/favorites'))
+app.use('/favorites', require('./build/controller/favorites'))
 
 
 
