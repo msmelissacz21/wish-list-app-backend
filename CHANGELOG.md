@@ -1,0 +1,41 @@
+-Converted to tsx and got it started
+-Added one last thing to read me
+-Updated readme and cleaned up code
+-fix cors
+-Merge pull request #15 from msmelissacz21/Melissa
+-Updated env
+-Merge pull request #14 from msmelissacz21/Melissa
+-add logs
+-Merge pull request #13 from msmelissacz21/Melissa
+-Added Heroku Proc
+-Merge pull request #12 from msmelissacz21/Melissa
+-Added access-control-origin for CORS
+-Merge branch 'Melissa' of https://github.com/msmelissacz21/wish-list-app-backend into Melissa
+-Updated README
+-Merge pull request #11 from msmelissacz21/Melissa
+-Merge branch 'main' into Melissa
+-Finished adding last route and tested, routes mostly done if not completely
+-Merge pull request #10 from msmelissacz21/Melissa
+-Merge branch 'main' into Melissa
+-Merge pull request #9 from msmelissacz21/joel-fix-get
+-Changing routes again
+-fix get
+-Merge pull request #8 from msmelissacz21/Melissa
+-More development of routes
+-Merge pull request #7 from msmelissacz21/Melissa
+-continuing to develope models and controllers
+-Merge pull request #6 from msmelissacz21/Melissa
+-Fixing routes to be correct
+-Merge pull request #5 from msmelissacz21/Melissa
+-Depoly to heroku
+-Favorites model and controller drafts created
+-Merge pull request #4 from msmelissacz21/Melissa
+-Fixed to only show backend stuff
+-Added some views and updated read me
+-Merge pull request #3 from msmelissacz21/Melissa
+-Merge pull request #2 from msmelissacz21/main
+-Set up PORT with dotenv
+-Merge pull request #1 from msmelissacz21/Melissa
+-Added favorites controller
+-Set up express, displaying on brower
+-Create index.js
