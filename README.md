@@ -1,6 +1,14 @@
 # Group Project Wish-List App
 
+
+## Description
 The purpose of this application is to add, delete, and prioitize items on a wish list.  This app has users that can add, update and delete items from their respective wishlists.  This is the back end code of the application.
+
+## Demo
+Currently down, due to switching from JS to Typescript
+
+## Technologies
+Originally in Javascript and converted to Typescript and Node.js.  This backend is currently in Typescript while the frontend is still being converted. The frontend uses React and Bootstrap.  Backend dependencies include express and mongoose. 
 
 
 ## Routes
@@ -39,3 +47,8 @@ Wish-list-app-database.userfavorites
 | _id              |        Object ID      |   
 | name             |         String        | 
 | favorites        |         Array         | 
+
+
+## Issues
+
+Currently the app is not deploying after switching to Typescript.  This is an issue that is steadily being worked on.
